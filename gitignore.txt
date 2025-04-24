@@ -1,1 +1,26 @@
-/bin
+# Python compiled files
+__pycache__/
+*.py[cod]
+*.so
+
+# Mac system files
+.DS_Store
+
+# Jupyter notebook autosaves
+.ipynb_checkpoints/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Conda or virtual environments
+env/
+venv/
+
+# VSCode settings
+.vscode/
+
