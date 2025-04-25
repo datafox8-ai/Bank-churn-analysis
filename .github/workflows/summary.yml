@@ -1,4 +1,4 @@
-name: Summarize
+name: Summarize new Issues
 
 on:
   issues:
