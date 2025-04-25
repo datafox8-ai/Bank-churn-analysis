@@ -1,0 +1,30 @@
+name: Mark stale issues and PRs
+
+on:
+  schedule:
+    - cron: '0 22 * * *' # every day at 22:00 UTC
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: >
+            This issue has been quiet for a while — maybe it's already resolved?
+            Feel free to comment if it's still relevant!
+          stale-pr-message: >
+            This pull request has been waiting patiently.
+            Let us know if it’s still in motion ;-)
+          close-issue-message: >
+            Closing this to keep things tidy — you're always welcome to reopen!
+            Progress is our shared goal.
+          close-pr-message: >
+            Closed due to inactivity, but the path to improvement is always open!
+
+          days-before-stale: 14
+          days-before-close: 7
+          stale-issue-label: stale
+          stale-pr-label: stale
