@@ -1,0 +1,43 @@
+name: Summarize new Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const labels = issue.labels.map(label => label.name.toLowerCase());
+
+            let message = '';
+
+            if (labels.some(label => ['bug', 'question', 'feedback'].includes(label))) {
+              message = `Thank you for your issue, **${issue.user.login}**!  
+Your message is now in the spotlight.  
+Perfection is our shared goal ;-)  
+We appreciate your contribution!`;
+            } else if (labels.some(label => ['duplicate', 'wontfix'].includes(label))) {
+              message = `Together — to perfection!  
+Thank you for your input!`;
+            } else {
+              message = `Thank you for walking this path to perfection with us!  
+We appreciate your effort.`;
+            }
+
+            await github.rest.issues.createComment({
+              ...context.repo,
+              issue_number: issue.number,
+              body: message
+            });
+
+          gh issue comment $ISSUE_NUMBER --body '${{ steps.inference.outputs.response }}'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          RESPONSE: ${{ steps.inference.outputs.response }}
