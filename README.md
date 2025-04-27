@@ -17,9 +17,11 @@ The analysis includes visualizations such as pie charts, bar charts, boxplots, s
 - Develop visual dashboards to support strategic decision-making.
 
 ## Data Source
-Kaggle datasets:
+The Kaggle datasets used in this project were obtained from open public resources on Kaggle and are used strictly for educational and demonstration purposes: 
 - BankChurners.csv
 - Churn_Modelling.csv
+  
+Special thanks to the original Kaggle contributors for making these datasets available. 
 
 ## Installation
 1. Download the project script and datasets from GitHub.
@@ -50,4 +52,3 @@ The full description, methodology, and results are documented in the final repor
 ## License & Usage
 _© 2025 I (datafox8-ai). All rights reserved._
 You may use and reference this work with proper attribution to the author.
-
