@@ -42,6 +42,11 @@ Kaggle datasets:
 ## Report
 The full description, methodology, and results are documented in the final report (PDF available in English).
 
+<p align="center">
+  <strong>Please feel free to ⭐ star this project!</strong><br>
+  <sub>Thanks a lot for your valuable support!</sub>
+</p>
+
 ## License & Usage
 _© 2025 I (datafox8-ai). All rights reserved._
 You may use and reference this work with proper attribution to the author.
